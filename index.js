@@ -6,7 +6,7 @@ const { Discovery } = require('magic-home');
 
 app.use(cors());
 
-app.get('/status', function (req, res) {
+app.get('/toggleLight', function (req, res) {
   let light = new Control(req.query.ip);
   setTimeout(() => {
     light.setPower(req.query.on === 'true').then((success) => {
